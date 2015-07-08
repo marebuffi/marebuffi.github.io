@@ -7,7 +7,7 @@
 
 @import "reset";
 @import "variables";
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300);
+@import url(http://fonts.googleapis.com/css?family=Roboto:100);
 // Syntax highlighting @import is at the bottom of this file
 
 /**************/
@@ -16,7 +16,7 @@
 
 body {
 	background: $white;
-  font: 16px/1.4 'Open Sans', $helvetica;
+  font: 16px/1.4 'Roboto', $helvetica;
   color: $darkGray;
 }
 
@@ -28,7 +28,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Open Sans', $helveticaNeue;
+  font-family: 'Roboto', $helveticaNeue;
   color: $darkerGray;
   font-weight: bold;
 
@@ -187,7 +187,7 @@ img {
   margin: 0;
   color: $darkGray;
   cursor: pointer;
-  font-family: 'Open Sans', $helveticaNeue;
+  font-family: 'Roboto', $helveticaNeue;
   font-weight: 100;
   font-size: 2.5em;
   letter-spacing: -1px;
