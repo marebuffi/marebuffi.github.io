@@ -22,7 +22,7 @@
 
 body {
 	background: $white;
-  font: 16px/1.4 $custom, $helvetica;
+  font: 16px/1.4 $ptsans;
   color: $darkGray;
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $custom, $helveticaNeue;
+  font-family: $dosis;
   color: $darkerGray;
   font-weight: bold;
 
@@ -193,7 +193,7 @@ img {
   margin: 0;
   color: $darkGray;
   cursor: pointer;
-  font-family: $custom, $helveticaNeue;
+  font-family: $ptsans;
   font-weight: 100;
   font-size: 2.5em;
   letter-spacing: -1px;
@@ -212,7 +212,7 @@ img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $custom, $helveticaNeue;
+  font-family: $ptsans;
   font-size: 18px;
 
   @include mobile {
