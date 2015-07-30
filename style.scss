@@ -9,8 +9,16 @@
 @import "variables";
 
 @font-face {
-  font-family: $custom;
-  src: url('fonts/colaborate_light_macroman/ColabLig-webfont.eot?') format('eot'), url('fonts/colaborate_light_macroman/ColabLig-webfont.woff') format('woff'), url('fonts/colaborate_light_macroman/ColabLig-webfont.ttf') format('truetype');
+  font-family: $dosis;
+  src:  url('fonts/dosis/dosis-light-webfont.eot?') format('eot'),
+        url('fonts/dosis/dosis-light-webfont.woff') format('woff'),
+        url('fonts/dosis/dosis-light-webfont.ttf') format('truetype');
+}
+@font-face {
+  font-family: $ptsans;
+  src:  url('fonts/ptsans/PTS55F-webfont.eot?') format('eot'),
+        url('fonts/ptsans/PTS55F-webfont.woff') format('woff'),
+        url('fonts/ptsans/PTS55F-webfont.ttf') format('truetype');
 }
 
 
