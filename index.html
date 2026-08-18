@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mario Rebuffi — Lead UX Designer & Front-End Developer</title>
-    <meta name="description" content="UX leader with 15+ years designing enterprise products for Intel, McAfee, and security startups. Bridges design and development with hands-on coding expertise.">
+    <title>Mario Rebuffi · Lead UX Designer & Design Engineer</title>
+    <meta name="description" content="UX leader with 15+ years designing enterprise security products for Intel, McAfee, and Faraday. Founder of GrooveLab FX: 21 commercial audio plugins, designed, coded, and shipped solo.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Mario Rebuffi · Lead UX Designer & Design Engineer">
+    <meta property="og:description" content="15+ years designing enterprise security products for Intel, McAfee, and Faraday. Founder of GrooveLab FX: 21 commercial audio plugins, designed, coded, and shipped solo.">
+    <meta property="og:url" content="https://marebuffi.github.io/">
+    <meta property="og:image" content="https://marebuffi.github.io/screens/faraday-dashboard-1.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Mario Rebuffi · Lead UX Designer & Design Engineer">
+    <meta name="twitter:description" content="15+ years designing enterprise security products for Intel, McAfee, and Faraday. Founder of GrooveLab FX: 21 commercial audio plugins, designed, coded, and shipped solo.">
+    <meta name="twitter:image" content="https://marebuffi.github.io/screens/faraday-dashboard-1.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Onest:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -470,6 +479,38 @@
             margin-top: 1rem;
         }
 
+        /* Gallery show-more */
+        .gallery-extra {
+            display: none;
+        }
+
+        .project-grid.expanded .gallery-extra {
+            display: block;
+        }
+
+        .show-more-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 2rem;
+            padding: 1rem 2rem;
+            background: transparent;
+            color: var(--ink);
+            border: 1px solid var(--ink);
+            font-size: 0.9rem;
+            font-weight: 500;
+            font-family: var(--sans);
+            border-radius: 100px;
+            cursor: pointer;
+            transition: background 0.3s ease, color 0.3s ease, transform 0.3s ease;
+        }
+
+        .show-more-btn:hover {
+            background: var(--ink);
+            color: var(--paper);
+            transform: translateY(-3px);
+        }
+
         /* Skills Section */
         .skills {
             background: var(--paper);
@@ -808,6 +849,25 @@
             gap: 1rem;
         }
 
+        .side-project-shot {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 25px 60px rgba(0,0,0,0.5);
+            transition: transform 0.3s ease;
+        }
+
+        .side-project-shot:hover {
+            transform: scale(1.02);
+        }
+
+        .side-project-caption {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #666;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
         .plugin-card {
             background: rgba(255,255,255,0.03);
             border: 1px solid rgba(255,255,255,0.08);
@@ -873,13 +933,19 @@
         }
 
         .product-category-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
+            columns: 2;
+            column-gap: 1rem;
+        }
+
+        .product-category-grid a {
+            display: block;
+            break-inside: avoid;
+            margin-bottom: 1rem;
         }
 
         .product-category-grid img {
             width: 100%;
+            display: block;
             border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -1176,7 +1242,7 @@
             }
 
             .product-category-grid {
-                grid-template-columns: repeat(3, 1fr);
+                columns: 2;
             }
 
             .product-line {
@@ -1212,22 +1278,24 @@
 
     <section class="hero">
         <div class="hero-content">
-            <p class="hero-label">Lead UX Designer & Front-End Developer</p>
+            <p class="hero-label">Lead UX Designer · Design Engineer</p>
             <h1>
-                <span>Designing </span>
+                <span>I design </span>
                 <span><em>complex</em> </span>
-                <span>products </span>
-                <span>that </span>
-                <span>scale</span>
+                <span>products. </span>
+                <span>And ship </span>
+                <span><em>my own.</em></span>
             </h1>
             <p class="hero-description">
-                15+ years crafting enterprise experiences for Intel, McAfee, and security startups.
-                I bridge design and development — from user research to production code.
+                15+ years designing enterprise security products for Intel, McAfee, and Faraday.
+                Founder of GrooveLab FX, where I build commercial audio plugins in C++:
+                design, code, and business, end to end.
             </p>
             <div class="hero-badges">
-                <span class="hero-badge"><strong>Intel Security</strong> / McAfee</span>
-                <span class="hero-badge"><strong>Faraday</strong> / Infobyte</span>
-                <span class="hero-badge"><strong>50+</strong> developers using my design systems</span>
+                <span class="hero-badge"><strong>15+</strong> years shipping products</span>
+                <span class="hero-badge"><strong>Intel · McAfee · Faraday</strong></span>
+                <span class="hero-badge"><strong>21</strong> plugins built solo</span>
+                <span class="hero-badge"><strong>500+</strong> customers worldwide</span>
             </div>
         </div>
         <div class="hero-scroll">
@@ -1236,94 +1304,161 @@
         </div>
     </section>
 
-    <section id="experience" class="career">
+    <div class="dark-sections">
+    <section class="case-studies">
         <div class="section-header reveal" style="padding: 0 0 3rem 0;">
-            <h2>15+ years of <em>experience</em></h2>
+            <h2 style="color: var(--paper);">Case <em>studies</em></h2>
         </div>
 
-        <div class="career-grid reveal">
-            <div class="career-years">
-                <div class="career-year">15+</div>
-                <div class="career-year-label">Years in Product</div>
+        <article class="case-study reveal">
+            <div class="case-study-content">
+                <p class="case-study-label">Faraday Security · 2021-2026</p>
+                <h3>Modernizing a legacy security platform</h3>
+                <p>Faraday's vulnerability management platform had grown for a decade with no dedicated design practice. Enterprise security teams depended on it daily, but core workflows were dated and inconsistent. I joined as the company's UX lead and built the practice from zero: user research, redesigned core workflows, and the design system and component library the whole team builds on. Every feature went through my pipeline of user stories, Mermaid flow diagrams, Sketch designs, and Zeplin handoff, so front-end and back-end developers implemented from a single source of truth. The result: a modernized platform, released iteratively every month for five years without stopping feature delivery.</p>
+                <div class="case-study-stats">
+                    <div class="stat">
+                        <div class="stat-value">5 yrs</div>
+                        <div class="stat-label">Monthly releases</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-value">1 &rarr; 4</div>
+                        <div class="stat-label">UX team I built</div>
+                    </div>
+                </div>
             </div>
+            <div class="case-study-images dual">
+                <img src="screens/faraday-dashboard-1.png" alt="Faraday Dashboard" class="hoverable">
+                <img src="screens/faraday-dashboard-2.png" alt="Faraday Analytics" class="hoverable">
+            </div>
+        </article>
 
-            <div class="career-items">
-                <div class="career-item">
-                    <div class="career-item-header">
-                        <h4>Lead UX Designer</h4>
-                        <div class="company">Faraday Security</div>
-                        <div class="period">2021 — 2025 · Remote</div>
+        <article class="case-study reveal">
+            <div class="case-study-content">
+                <p class="case-study-label">Intel Security / McAfee · 2015-2021</p>
+                <h3>A design system developers actually use</h3>
+                <p>Intel Security had dozens of product teams shipping UI independently. Designs drifted from implementation the moment they were handed off, and every product looked and behaved differently. I designed and coded the Enterprise Living Styleguide: not a PDF, but working HTML components packaged as an npm module that plugged into each team's build pipeline. When the styleguide updated, every product's styles updated with it. I owned it end to end: visual design, component code, documentation, and developer adoption. It was adopted across all Intel Security products and used by 50+ developers as the company-wide standard.</p>
+                <div class="case-study-stats">
+                    <div class="stat">
+                        <div class="stat-value">50+</div>
+                        <div class="stat-label">Developers</div>
                     </div>
-                    <div class="career-item-content">
-                        <p>Led a UX team of 4 for vulnerability management platform, owning the full design-to-development pipeline: user stories, epics, GitLab issues, Mermaid flows, and Sketch designs handed off via Zeplin. All front-end and back-end developers implemented features I created, with the special challenge of modernizing a legacy product to new standards.</p>
-                        <span class="highlight">End-to-end UX ownership</span>
+                    <div class="stat">
+                        <div class="stat-value">All</div>
+                        <div class="stat-label">Intel Security products</div>
                     </div>
                 </div>
+            </div>
+            <div class="case-study-images">
+                <img src="screens/styleguide.png" alt="Enterprise Living Styleguide" class="hoverable">
+            </div>
+        </article>
 
-                <div class="career-item">
-                    <div class="career-item-header">
-                        <h4>Lead UX Designer</h4>
-                        <div class="company">Intel Corporation (McAfee)</div>
-                        <div class="period">2015 — 2021 · On-site at ASDC, Córdoba</div>
+        <article class="case-study reveal">
+            <div class="case-study-content">
+                <p class="case-study-label">GrooveLab FX · 2017-Present</p>
+                <h3>Running a product company of one</h3>
+                <p>Audio plugins are one of the hardest consumer software categories: real-time C++ DSP, pixel-perfect custom GUIs, cross-platform builds, and famously picky customers. I built the entire company solo: 21 commercial VST/AU plugins in C++ (iPlug2), every interface designed and implemented by me, plus the full business around them: e-commerce platform (Node.js, PostgreSQL), payment processing, license management, marketing, and a customer community forum. Today GrooveLab has 500+ customers worldwide and is my full-time focus. It is the rare portfolio piece where design decisions, code quality, and business results all belong to one person.</p>
+                <div class="case-study-stats">
+                    <div class="stat">
+                        <div class="stat-value">21</div>
+                        <div class="stat-label">Commercial plugins</div>
                     </div>
-                    <div class="career-item-content">
-                        <p>Worked on-site at Intel's Argentina Site Development Center (ASDC), collaborating directly with cross-functional teams. Created Enterprise Living Styleguide adopted across all Intel Security products. Designed and coded reusable component library used by 50+ developers across multiple product teams.</p>
-                        <span class="highlight">50+ developers</span>
+                    <div class="stat">
+                        <div class="stat-value">500+</div>
+                        <div class="stat-label">Customers worldwide</div>
                     </div>
                 </div>
+            </div>
+            <div class="case-study-images dual">
+                <img src="screens/products/full/axonic-x6.png" alt="Axonic X6 guitar amp simulator" class="hoverable">
+                <img src="screens/products/full/axonic2.png" alt="Axonic 2 guitar amp simulator" class="hoverable">
+            </div>
+        </article>
+    </section>
 
-                <div class="career-item">
-                    <div class="career-item-header">
-                        <h4>UI/UX Developer</h4>
-                        <div class="company">Intel Corporation (McAfee)</div>
-                        <div class="period">2014 — 2015 · On-site at ASDC, Córdoba</div>
-                    </div>
-                    <div class="career-item-content">
-                        <p>On-site at Intel's Argentina Site Development Center (ASDC), working alongside engineering and product teams. Built TrueKey password manager UI across Windows, Android, iOS, and web platforms. Pioneered single-source view layer architecture for consistent cross-platform UX.</p>
-                        <span class="highlight">4 platforms, 1 codebase</span>
-                    </div>
+    <section class="side-project reveal">
+        <div class="side-project-grid">
+            <div class="side-project-content">
+                <h3>I run my own <em>product company</em></h3>
+                <p>Since 2017, I have single-handedly built and operated GrooveLab FX, an indie audio software company with 21 commercial VST/AU plugins. Since 2026, it is my full-time focus.</p>
+                <p>I handle everything: C++ DSP development, GUI design and implementation, cross-platform builds, full-stack e-commerce, payment processing, and customer support.</p>
+                <p>The plugins are built with an AI-augmented pipeline I designed: Claude Code orchestrates agents that build and test each plugin against strict specs and safeguards I write, Codex runs adversarial code reviews, Claude drives Blender through MCP for 3D assets, and ComfyUI pipelines generate image, video, and music assets.</p>
+                <div class="tech-stack">
+                    <span class="tech-tag">C++</span>
+                    <span class="tech-tag">iPlug2</span>
+                    <span class="tech-tag">DSP</span>
+                    <span class="tech-tag">Node.js</span>
+                    <span class="tech-tag">PostgreSQL</span>
+                    <span class="tech-tag">Heroku</span>
+                    <span class="tech-tag">Claude Code</span>
+                    <span class="tech-tag">Codex</span>
+                    <span class="tech-tag">MCP</span>
+                    <span class="tech-tag">ComfyUI</span>
                 </div>
-
-                <div class="career-item">
-                    <div class="career-item-header">
-                        <h4>Front-End Developer & Tech Lead</h4>
-                        <div class="company">Harriague & Associates</div>
-                        <div class="period">2012 — 2014 · On-site, Córdoba</div>
-                    </div>
-                    <div class="career-item-content">
-                        <p>Led teams of 4-8 developers on web and cloud projects using SCRUM methodology. Delivered end-to-end solutions from stakeholder workshops through deployment.</p>
-                    </div>
-                </div>
-
-                <div class="career-item">
-                    <div class="career-item-header">
-                        <h4>Front End Developer</h4>
-                        <div class="company">Blackbox Argentina</div>
-                        <div class="period">Feb — Oct 2012 · On-site, Córdoba</div>
-                    </div>
-                    <div class="career-item-content">
-                        <p>Content Management Systems development (Drupal, WordPress) with focus on standards and usability for web UIs. Back and front-end development.</p>
-                    </div>
-                </div>
-
-                <div class="career-item">
-                    <div class="career-item-header">
-                        <h4>Web Designer & Front End Developer</h4>
-                        <div class="company">Santex America S.A.</div>
-                        <div class="period">2009 — 2011 · On-site, Córdoba</div>
-                    </div>
-                    <div class="career-item-content">
-                        <p>Developed commercial sites for customers over WordPress, Joomla, and Drupal. Bug fixing and front-end development across various CMS platforms.</p>
-                    </div>
-                </div>
+                <a href="https://groovelab-fx.com" target="_blank" class="side-project-link hoverable">
+                    Visit GrooveLab FX
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                    </svg>
+                </a>
+            </div>
+            <div class="side-project-visual">
+                <img src="screens/products/full/axonic-x6.png" alt="Axonic X6 floor modeler plugin" class="hoverable side-project-shot">
+                <p class="side-project-caption">Axonic X6 · 1 of 21 plugins</p>
             </div>
         </div>
     </section>
 
+    <section class="product-line">
+        <div class="section-header reveal" style="padding: 0 0 2rem 0;">
+            <h2 style="color: var(--paper);"><em>Product</em> line</h2>
+            <span class="section-count" style="color: #666;">21 plugins</span>
+        </div>
+        <div class="product-categories reveal">
+            <div class="product-category">
+                <h4 class="product-category-label">Amp Simulators</h4>
+                <div class="product-category-grid">
+                    <a href="https://groovelab-fx.com/axonic-x6.html" target="_blank"><img src="screens/products/full/axonic-x6.png" alt="Axonic X6" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/axonic2.html" target="_blank"><img src="screens/products/full/axonic2.png" alt="Axonic 2" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/axonic.html" target="_blank"><img src="screens/products/full/axonic.png" alt="Axonic" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/51gl.html" target="_blank"><img src="screens/products/full/51gl.jpg" alt="51GL" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/vyp3r.html" target="_blank"><img src="screens/products/full/vyp3r.png" alt="Vyp3r" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/cazador.html" target="_blank"><img src="screens/products/full/cazador.jpg" alt="Cazador" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/satanic.html" target="_blank"><img src="screens/products/full/satanic.jpg" alt="Satanic" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/v1v0.html" target="_blank"><img src="screens/products/full/v1v0.jpg" alt="V1V0" class="hoverable"></a>
+                </div>
+            </div>
+            <div class="product-category">
+                <h4 class="product-category-label">Effects & Pedals</h4>
+                <div class="product-category-grid">
+                    <a href="https://groovelab-fx.com/rupture.html" target="_blank"><img src="screens/products/full/rupture.png" alt="Rupture" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/whacky.html" target="_blank"><img src="screens/products/full/whacky.jpg" alt="Whacky" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/h4lt.html" target="_blank"><img src="screens/products/full/h4lt.jpg" alt="H4LT" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/diver.html" target="_blank"><img src="screens/products/full/diver.jpg" alt="Diver" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/v-drive.html" target="_blank"><img src="screens/products/full/v-drive.png" alt="V-Drive" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/carrot2.html" target="_blank"><img src="screens/products/full/carrot2.png" alt="Carrot 2" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/carrot.html" target="_blank"><img src="screens/products/full/carrot.png" alt="Carrot" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/dt-100.html" target="_blank"><img src="screens/products/full/dt-100.png" alt="DT-100" class="hoverable"></a>
+                </div>
+            </div>
+            <div class="product-category">
+                <h4 class="product-category-label">Preamps & Cabs</h4>
+                <div class="product-category-grid">
+                    <a href="https://groovelab-fx.com/big-bastard.html" target="_blank"><img src="screens/products/full/big-bastard.png" alt="Big Bastard" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/black-haze.html" target="_blank"><img src="screens/products/full/black-haze.jpg" alt="Black Haze" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/vbc.html" target="_blank"><img src="screens/products/full/vbc.png" alt="VBC" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/groovycab.html" target="_blank"><img src="screens/products/full/groovycab.jpg" alt="GroovyCab" class="hoverable"></a>
+                    <a href="https://groovelab-fx.com/ir-x.html" target="_blank"><img src="screens/products/full/ir-x.jpg" alt="IR-X" class="hoverable"></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    </div>
+
     <section id="work">
         <div class="section-header reveal">
             <h2>Selected <em>work</em></h2>
-            <span class="section-count">01 — 25</span>
+            <span class="section-count">01 · 12</span>
         </div>
 
         <div class="projects">
@@ -1349,7 +1484,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/faraday-dashboard-4.png">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/faraday-dashboard-4.png">
                     <img src="screens/faraday-dashboard-4.png" alt="Faraday Compliance" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1369,7 +1504,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/faraday_light_002.jpg">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/faraday_light_002.jpg">
                     <img src="screens/faraday_light_002.jpg" alt="Faraday Light Mode" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1379,7 +1514,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/faraday-dashboard-5.png">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/faraday-dashboard-5.png">
                     <img src="screens/faraday-dashboard-5.png" alt="Faraday Workspace Summary" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1389,7 +1524,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/faraday-dashboard-6.png">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/faraday-dashboard-6.png">
                     <img src="screens/faraday-dashboard-6.png" alt="Faraday Assets View" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1440,7 +1575,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/intel-download-page.png">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/intel-download-page.png">
                     <img src="screens/intel-download-page.png" alt="TrueKey Download" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1450,7 +1585,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/truekey_intel_c.jpg">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/truekey_intel_c.jpg">
                     <img src="screens/truekey_intel_c.jpg" alt="TrueKey Settings" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1460,7 +1595,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/truekey_intel_d.jpg">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/truekey_intel_d.jpg">
                     <img src="screens/truekey_intel_d.jpg" alt="TrueKey Onboarding" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1470,7 +1605,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/truekey_intel_e.png">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/truekey_intel_e.png">
                     <img src="screens/truekey_intel_e.png" alt="TrueKey Browser" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1491,7 +1626,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/mcafee-workspace-1.png">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/mcafee-workspace-1.png">
                     <img src="screens/mcafee-workspace-1.png" alt="MVISION Endpoint" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1531,7 +1666,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/mcafee-mobile-tour.png">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/mcafee-mobile-tour.png">
                     <img src="screens/mcafee-mobile-tour.png" alt="Mobile Onboarding" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1541,17 +1676,7 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/mcafee-platform-overview.jpg">
-                    <img src="screens/mcafee-platform-overview.jpg" alt="MVISION Platform" class="project-image">
-                    <div class="project-overlay"></div>
-                    <div class="project-info">
-                        <h3>MVISION Platform</h3>
-                        <p>Unified cloud-native security ecosystem</p>
-                        <span class="project-tag">Enterprise</span>
-                    </div>
-                </article>
-
-                <article class="project reveal hoverable" data-image="screens/McAfee-Cloud-Workload-Security.jpg">
+                <article class="project reveal hoverable gallery-extra" data-image="screens/McAfee-Cloud-Workload-Security.jpg">
                     <img src="screens/McAfee-Cloud-Workload-Security.jpg" alt="Cloud Workload Security" class="project-image">
                     <div class="project-overlay"></div>
                     <div class="project-info">
@@ -1572,201 +1697,108 @@
                     </div>
                 </article>
 
-                <article class="project reveal hoverable" data-image="screens/Presentation_Preview.jpg">
-                    <img src="screens/Presentation_Preview.jpg" alt="Collab Calendar" class="project-image">
-                    <div class="project-overlay"></div>
-                    <div class="project-info">
-                        <h3>Collab Calendar</h3>
-                        <p>UX Design Challenge — Team collaboration</p>
-                        <span class="project-tag">Mobile UX</span>
-                    </div>
-                </article>
+            </div>
+            <div style="text-align:center">
+                <button class="show-more-btn hoverable" id="showMoreBtn">Show more work</button>
             </div>
         </div>
     </section>
 
-    <div class="dark-sections">
-    <section class="case-studies">
+    <section id="experience" class="career">
         <div class="section-header reveal" style="padding: 0 0 3rem 0;">
-            <h2 style="color: var(--paper);">Case <em>studies</em></h2>
+            <h2>15+ years of <em>experience</em></h2>
         </div>
 
-        <article class="case-study reveal">
-            <div class="case-study-content">
-                <p class="case-study-label">Faraday Security · 2021—2025</p>
-                <h3>Vulnerability Management Platform</h3>
-                <p>Led UX for enterprise security platform serving vulnerability management teams. Owned the complete design lifecycle — from user research, wireframes, and UX flows through low and high-fidelity prototypes to final designs. Also authored user stories, technical requirements, implementation plans, and use cases to support design decisions, plus Mermaid diagrams to align with developers and stakeholders.</p>
-                <div class="case-study-stats">
-                    <div class="stat">
-                        <div class="stat-value">End-to-end</div>
-                        <div class="stat-label">UX ownership</div>
-                    </div>
-                    <div class="stat">
-                        <div class="stat-value">5 yrs</div>
-                        <div class="stat-label">Leading UX team</div>
-                    </div>
-                </div>
+        <div class="career-grid reveal">
+            <div class="career-years">
+                <div class="career-year">15+</div>
+                <div class="career-year-label">Years in Product</div>
             </div>
-            <div class="case-study-images dual">
-                <img src="screens/faraday-dashboard-1.png" alt="Faraday Dashboard" class="hoverable">
-                <img src="screens/faraday-dashboard-2.png" alt="Faraday Analytics" class="hoverable">
-            </div>
-        </article>
 
-        <article class="case-study reveal">
-            <div class="case-study-content">
-                <p class="case-study-label">McAfee · 2015—2021 · On-site at ASDC, Córdoba</p>
-                <h3>MVISION Product Suite</h3>
-                <p>Working on-site at Intel's Argentina Site Development Center (ASDC), served as UX Designer for the entire MVISION product family — McAfee's unified cloud-native security platform. Collaborated directly with local and global teams to design interfaces for MVISION Endpoint, Mobile, EDR (Endpoint Detection & Response), and Cloud security products, creating cohesive experiences across the enterprise security ecosystem.</p>
-                <div class="case-study-stats">
-                    <div class="stat">
-                        <div class="stat-value">5+</div>
-                        <div class="stat-label">Products</div>
+            <div class="career-items">
+                <div class="career-item">
+                    <div class="career-item-header">
+                        <h4>Founder & Solo Developer</h4>
+                        <div class="company">GrooveLab FX</div>
+                        <div class="period">2017 - Present · Full-time since 2026</div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-value">Unified</div>
-                        <div class="stat-label">Platform UX</div>
+                    <div class="career-item-content">
+                        <p>Founded and run an indie audio software company with 21 commercial VST/AU plugins, now my full-time focus. I own the entire product lifecycle: C++ DSP development, GUI design and implementation, cross-platform builds, full-stack e-commerce (Node.js, PostgreSQL), payment processing, and customer support.</p>
+                        <span class="highlight">21 shipped products</span>
                     </div>
                 </div>
-            </div>
-            <div class="case-study-images dual">
-                <img src="screens/mcafee-cloud-security.png" alt="MVISION Cloud" class="hoverable">
-                <img src="screens/mcafee-unified-console.jpg" alt="MVISION Console" class="hoverable">
-            </div>
-        </article>
 
-        <article class="case-study reveal">
-            <div class="case-study-content">
-                <p class="case-study-label">Intel Security / McAfee · 2015—2021 · On-site at ASDC, Córdoba</p>
-                <h3>Enterprise Living Styleguide</h3>
-                <p>At Intel's Argentina Site Development Center (ASDC), created the Enterprise Living Styleguide adopted across all Intel Security products, ensuring visual and interaction consistency company-wide. Designed and coded HTML components, packaged as an npm module that developers could integrate directly into their dev and deployment workflows — keeping styles always up to date. Used by 50+ developers across multiple product teams.</p>
-                <div class="case-study-stats">
-                    <div class="stat">
-                        <div class="stat-value">50+</div>
-                        <div class="stat-label">Developers</div>
+                <div class="career-item">
+                    <div class="career-item-header">
+                        <h4>Lead UX Designer</h4>
+                        <div class="company">Faraday Security</div>
+                        <div class="period">2021 - 2026 · Remote</div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-value">6 yrs</div>
-                        <div class="stat-label">At Intel</div>
+                    <div class="career-item-content">
+                        <p>Led a UX team of 4 for vulnerability management platform, owning the full design-to-development pipeline: user stories, epics, GitLab issues, Mermaid flows, and Sketch designs handed off via Zeplin. All front-end and back-end developers implemented features I created, with the special challenge of modernizing a legacy product to new standards.</p>
+                        <span class="highlight">End-to-end UX ownership</span>
                     </div>
                 </div>
-            </div>
-            <div class="case-study-images">
-                <img src="screens/styleguide.png" alt="Enterprise Living Styleguide" class="hoverable">
-            </div>
-        </article>
 
-        <article class="case-study reveal">
-            <div class="case-study-content">
-                <p class="case-study-label">Intel Security · 2014—2015 · On-site at ASDC, Córdoba</p>
-                <h3>TrueKey Password Manager</h3>
-                <p>On-site at Intel's Argentina Site Development Center (ASDC), built TrueKey password manager UI across Windows, Android, iOS, and web platforms. Collaborated directly with engineering teams to pioneer a single-source view layer architecture, enabling consistent UX and simplified maintenance across all platforms — critical for security-focused user flows.</p>
-                <div class="case-study-stats">
-                    <div class="stat">
-                        <div class="stat-value">4</div>
-                        <div class="stat-label">Platforms</div>
+                <div class="career-item">
+                    <div class="career-item-header">
+                        <h4>Lead UX Designer</h4>
+                        <div class="company">Intel Corporation (McAfee)</div>
+                        <div class="period">2015 - 2021 · On-site at ASDC, Córdoba</div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-value">1</div>
-                        <div class="stat-label">Codebase</div>
+                    <div class="career-item-content">
+                        <p>Worked on-site at Intel's Argentina Site Development Center (ASDC), collaborating directly with cross-functional teams. Created Enterprise Living Styleguide adopted across all Intel Security products. Designed and coded reusable component library used by 50+ developers across multiple product teams.</p>
+                        <span class="highlight">50+ developers</span>
                     </div>
                 </div>
-            </div>
-            <div class="case-study-images dual">
-                <img src="screens/truekey_intel_a.jpg" alt="TrueKey Interface" class="hoverable">
-                <img src="screens/truekey_intel_b.jpg" alt="TrueKey Vault" class="hoverable">
-            </div>
-        </article>
 
-        <article class="case-study reveal">
-            <div class="case-study-content">
-                <p class="case-study-label">Making Sense · UX Challenge</p>
-                <h3>Collab Calendar</h3>
-                <p>Designed a team calendar application from concept to high-fidelity prototypes. Focused on intuitive workflows for scheduling, task viewing, and real-time collaboration features with detailed UX documentation.</p>
-                <div class="case-study-stats">
-                    <div class="stat">
-                        <div class="stat-value">3</div>
-                        <div class="stat-label">Core workflows</div>
+                <div class="career-item">
+                    <div class="career-item-header">
+                        <h4>UI/UX Developer</h4>
+                        <div class="company">Intel Corporation (McAfee)</div>
+                        <div class="period">2014 - 2015 · On-site at ASDC, Córdoba</div>
                     </div>
-                    <div class="stat">
-                        <div class="stat-value">24</div>
-                        <div class="stat-label">Screen designs</div>
+                    <div class="career-item-content">
+                        <p>On-site at Intel's Argentina Site Development Center (ASDC), working alongside engineering and product teams. Built TrueKey password manager UI across Windows, Android, iOS, and web platforms. Pioneered single-source view layer architecture for consistent cross-platform UX.</p>
+                        <span class="highlight">4 platforms, 1 codebase</span>
                     </div>
                 </div>
-            </div>
-            <div class="case-study-images">
-                <img src="screens/Presentation_Preview.jpg" alt="Collab Calendar Workflow" class="hoverable">
-            </div>
-        </article>
-    </section>
 
-    <section class="side-project reveal">
-        <div class="side-project-grid">
-            <div class="side-project-content">
-                <h3>Also: I build <em>audio software</em></h3>
-                <p>Since 2017, I've single-handedly built and operate GrooveLab FX — an indie audio software company with 16+ commercial VST/AU plugins.</p>
-                <p>I handle everything: C++ DSP development, GUI implementation, cross-platform builds, full-stack e-commerce, payment processing, and customer support.</p>
-                <div class="tech-stack">
-                    <span class="tech-tag">C++</span>
-                    <span class="tech-tag">iPlug2</span>
-                    <span class="tech-tag">DSP</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">PostgreSQL</span>
-                    <span class="tech-tag">Heroku</span>
+                <div class="career-item">
+                    <div class="career-item-header">
+                        <h4>Front-End Developer & Tech Lead</h4>
+                        <div class="company">Harriague & Associates</div>
+                        <div class="period">2012 - 2014 · On-site, Córdoba</div>
+                    </div>
+                    <div class="career-item-content">
+                        <p>Led teams of 4-8 developers on web and cloud projects using SCRUM methodology. Delivered end-to-end solutions from stakeholder workshops through deployment.</p>
+                    </div>
                 </div>
-                <a href="https://groovelab-fx.com" target="_blank" class="side-project-link hoverable">
-                    Visit GrooveLab FX
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
-                    </svg>
-                </a>
-            </div>
-            <div class="side-project-visual">
-                <img src="screens/groovelab.png" alt="GrooveLab FX Website" class="hoverable" style="width: 100%; border-radius: 12px;">
-            </div>
-        </div>
-    </section>
 
-    <section class="product-line">
-        <div class="section-header reveal" style="padding: 0 0 2rem 0;">
-            <h2 style="color: var(--paper);"><em>Product</em> line</h2>
-            <span class="section-count" style="color: #666;">16 plugins</span>
-        </div>
-        <div class="product-categories reveal">
-            <div class="product-category">
-                <h4 class="product-category-label">Amp Simulators</h4>
-                <div class="product-category-grid">
-                    <img src="screens/products/mini_axonic.png" alt="Axonic" class="hoverable">
-                    <img src="screens/products/mini_51GL.png" alt="51GL" class="hoverable">
-                    <img src="screens/products/mini_vyp3r.png" alt="Vyp3r" class="hoverable">
-                    <img src="screens/products/mini_cazador.png" alt="Cazador" class="hoverable">
-                    <img src="screens/products/mini_satanic.png" alt="Satanic" class="hoverable">
-                    <img src="screens/products/mini_v1v0.png" alt="V1V0" class="hoverable">
+                <div class="career-item">
+                    <div class="career-item-header">
+                        <h4>Front End Developer</h4>
+                        <div class="company">Blackbox Argentina</div>
+                        <div class="period">Feb - Oct 2012 · On-site, Córdoba</div>
+                    </div>
+                    <div class="career-item-content">
+                        <p>Content Management Systems development (Drupal, WordPress) with focus on standards and usability for web UIs. Back and front-end development.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="product-category">
-                <h4 class="product-category-label">Effects</h4>
-                <div class="product-category-grid">
-                    <img src="screens/products/mini_rupture.png" alt="Rupture" class="hoverable">
-                    <img src="screens/products/mini_whacky.png" alt="Whacky" class="hoverable">
-                    <img src="screens/products/mini_h4lt.png" alt="H4LT" class="hoverable">
-                    <img src="screens/products/mini_diver.png" alt="Diver" class="hoverable">
-                    <img src="screens/products/mini_v-drive.png" alt="V-Drive" class="hoverable">
-                    <img src="screens/products/mini_carrot.png" alt="Carrot" class="hoverable">
-                </div>
-            </div>
-            <div class="product-category">
-                <h4 class="product-category-label">Preamps & Cabs</h4>
-                <div class="product-category-grid">
-                    <img src="screens/products/mini_bb.png" alt="Big Bastard" class="hoverable">
-                    <img src="screens/products/mini_bh.png" alt="Black Haze" class="hoverable">
-                    <img src="screens/products/mini_gc.png" alt="GroovyCab" class="hoverable">
-                    <img src="screens/products/mini_ir-x.png" alt="IR-X" class="hoverable">
+
+                <div class="career-item">
+                    <div class="career-item-header">
+                        <h4>Web Designer & Front End Developer</h4>
+                        <div class="company">Santex America S.A.</div>
+                        <div class="period">2009 - 2011 · On-site, Córdoba</div>
+                    </div>
+                    <div class="career-item-content">
+                        <p>Developed commercial sites for customers over WordPress, Joomla, and Drupal. Bug fixing and front-end development across various CMS platforms.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    </div>
 
     <section id="skills" class="skills">
         <div class="section-header reveal" style="padding: 0 0 1rem 0;">
@@ -1775,11 +1807,23 @@
 
         <div class="skills-grid reveal">
             <div class="skill-category">
+                <h4>AI-Augmented Workflow</h4>
+                <div class="skill-list">
+                    <span class="skill-tag hoverable">Claude Code (agent orchestration)</span>
+                    <span class="skill-tag hoverable">Codex (adversarial review)</span>
+                    <span class="skill-tag hoverable">MCP integrations (Blender)</span>
+                    <span class="skill-tag hoverable">ComfyUI (image · video · music)</span>
+                </div>
+            </div>
+
+            <div class="skill-category">
                 <h4>Design & Prototyping</h4>
                 <div class="skill-list">
                     <span class="skill-tag hoverable">Figma</span>
                     <span class="skill-tag hoverable">Sketch</span>
-                    <span class="skill-tag hoverable">InVision</span>
+                    <span class="skill-tag hoverable">Design Systems & Tokens</span>
+                    <span class="skill-tag hoverable">User Research</span>
+                    <span class="skill-tag hoverable">Prototyping in code</span>
                     <span class="skill-tag hoverable">Adobe Creative Suite</span>
                 </div>
             </div>
@@ -1802,7 +1846,6 @@
                     <span class="skill-tag hoverable">GitLab</span>
                     <span class="skill-tag hoverable">Agile/SCRUM</span>
                     <span class="skill-tag hoverable">CI/CD</span>
-                    <span class="skill-tag hoverable">npm</span>
                 </div>
             </div>
 
@@ -1821,7 +1864,6 @@
                 <h4>Standards & Best Practices</h4>
                 <div class="skill-list">
                     <span class="skill-tag hoverable">WCAG Accessibility</span>
-                    <span class="skill-tag hoverable">W3C Validation</span>
                     <span class="skill-tag hoverable">SEO</span>
                     <span class="skill-tag hoverable">Performance</span>
                 </div>
@@ -1912,7 +1954,7 @@
                 </svg>
                 marebuffi@gmail.com
             </a>
-            <a href="https://linkedin.com/in/mariorebuffi" target="_blank" class="contact-link hoverable">
+            <a href="https://linkedin.com/in/mario-rebuffi" target="_blank" class="contact-link hoverable">
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
                     <rect x="2" y="9" width="4" height="12"/>
@@ -2013,6 +2055,15 @@
                 lightbox.classList.remove('active');
                 document.body.style.overflow = '';
             }
+        });
+
+        // Gallery show-more toggle
+        const showMoreBtn = document.getElementById('showMoreBtn');
+        const projectGrid = document.querySelector('.project-grid');
+        showMoreBtn.addEventListener('click', () => {
+            const expanded = projectGrid.classList.toggle('expanded');
+            showMoreBtn.textContent = expanded ? 'Show less' : 'Show more work';
+            projectGrid.querySelectorAll('.gallery-extra.reveal').forEach(el => el.classList.add('visible'));
         });
 
         // Smooth scroll for nav links
