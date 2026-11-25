@@ -148,7 +148,8 @@
             display: flex;
             justify-content: space-between;
             align-items: end;
-            gap: 16px;
+            flex-wrap: wrap;
+            gap: 6px 16px;
             padding: 40px 8px 16px;
         }
         .section-head .label { white-space: nowrap; }
@@ -344,7 +345,7 @@
             .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
             .s6, .s4, .s3 { grid-column: span 2; }
             .s2 { grid-column: span 1; }
-            .s2.wide-sm, .shot.s1 { grid-column: span 2; }
+            .s2.wide-sm, .shot.s1, .skill { grid-column: span 2; }
             .nav-links li:not(:last-child) { display: none; }
             .me, .case-text, .feature { padding: 24px; }
             .feature { grid-template-columns: 1fr; }
