@@ -4,15 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mario Rebuffi · Lead UX Designer & Design Engineer</title>
-    <meta name="description" content="UX leader with 15+ years designing enterprise security products for Intel, McAfee, and Faraday. Founder of GrooveLab FX: 21 commercial audio plugins, designed, coded, and shipped solo.">
+    <meta name="description" content="Lead UX designer with 15+ years on enterprise security web apps for Intel, McAfee, and Faraday. Deep front-end craft: HTML, CSS, JavaScript, web standards, and cross-browser compatibility.">
     <meta property="og:type" content="website">
     <meta property="og:title" content="Mario Rebuffi · Lead UX Designer & Design Engineer">
-    <meta property="og:description" content="15+ years designing enterprise security products for Intel, McAfee, and Faraday. Founder of GrooveLab FX: 21 commercial audio plugins, designed, coded, and shipped solo.">
+    <meta property="og:description" content="Lead UX designer with 15+ years on enterprise security web apps for Intel, McAfee, and Faraday. Deep front-end craft: HTML, CSS, JavaScript, web standards, and cross-browser compatibility.">
     <meta property="og:url" content="https://marebuffi.github.io/">
     <meta property="og:image" content="https://marebuffi.github.io/screens/faraday-dashboard-1.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Mario Rebuffi · Lead UX Designer & Design Engineer">
-    <meta name="twitter:description" content="15+ years designing enterprise security products for Intel, McAfee, and Faraday. Founder of GrooveLab FX: 21 commercial audio plugins, designed, coded, and shipped solo.">
+    <meta name="twitter:description" content="Lead UX designer with 15+ years on enterprise security web apps for Intel, McAfee, and Faraday. Deep front-end craft: HTML, CSS, JavaScript, web standards, and cross-browser compatibility.">
     <meta name="twitter:image" content="https://marebuffi.github.io/screens/faraday-dashboard-1.png">
     <script>
         try { if (localStorage.getItem('theme') === 'dark') document.documentElement.dataset.theme = 'dark'; } catch (e) {}
@@ -252,6 +252,34 @@
         .job p { font-size: 15px; max-width: 70ch; }
         .job .hl { display: inline-block; margin-top: 10px; font-size: 12.5px; font-weight: 500; color: var(--accent); }
 
+        /* Craft */
+        .craft { display: flex; flex-direction: column; gap: 10px; }
+        .craft p { font-size: 15px; }
+        .shader-tile { padding: 0; min-height: 240px; display: flex; align-items: flex-end; }
+        .shader-tile canvas {
+            position: absolute; inset: 0; width: 100%; height: 100%; display: block;
+            background: radial-gradient(120% 90% at 30% 20%, #3a2f9e, #16191f 70%);
+        }
+        .shader-copy {
+            position: relative; z-index: 1; width: 100%; padding: 60px 28px 28px; display: grid; gap: 8px;
+            background: linear-gradient(transparent, rgba(10, 12, 16, 0.78) 45%);
+        }
+        .shader-copy p.muted { max-width: 46ch; }
+        .craft.core { gap: 14px; padding: 32px; }
+        .craft.core h3 { font-size: clamp(24px, 2.6vw, 30px); }
+        .checks { list-style: none; margin: 4px 0 0; padding: 0; display: grid; gap: 10px; font-size: 15px; }
+        .checks li { position: relative; padding-left: 26px; }
+        .checks li::before { content: ""; position: absolute; left: 2px; top: 6px; width: 12px; height: 7px;
+            border-left: 2px solid var(--accent); border-bottom: 2px solid var(--accent); transform: rotate(-45deg); }
+        .checks b { font-weight: 600; }
+        .small { font-size: 13.5px; margin-top: auto; }
+        .archive-toggle {
+            font: inherit; font-size: 13px; font-weight: 500; cursor: pointer; padding: 8px 14px; border-radius: 999px;
+            border: 1px solid var(--line); background: var(--tile); color: var(--fg);
+        }
+        .archive-toggle:hover { background: var(--tile-2); }
+        .archive.collapsed > a { display: none; }
+
         /* Skills */
         .skill { display: flex; flex-direction: column; gap: 12px; }
 
@@ -338,6 +366,7 @@
         <div class="nav-right">
             <ul class="nav-links">
                 <li><a href="#work">Work</a></li>
+                <li><a href="#craft">Craft</a></li>
                 <li><a href="#groovelab">GrooveLab</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#contact" class="cta">Contact</a></li>
@@ -355,8 +384,8 @@
             <span class="avail"><i></i>Open to Lead UX and Design Engineer roles</span>
             <div>
                 <p class="label">Lead UX Designer · Design Engineer</p>
-                <h1 style="margin-top:12px">I design complex products. <span>And ship my own.</span></h1>
-                <p class="lede">15+ years designing enterprise security products for Intel, McAfee, and Faraday. Founder of GrooveLab FX, where I build commercial audio plugins in C++: design, code, and business, end to end.</p>
+                <h1 style="margin-top:12px">I design complex web apps. <span>And build what I design.</span></h1>
+                <p class="lede">15+ years in UX, more than a decade of it on enterprise security web apps for Intel, McAfee, and Faraday. Deep front-end craft: HTML, CSS, and JavaScript built to web standards and cross-browser compatibility, plus shaders, web animation, and video made with code. On the side, I build and keep shipping GrooveLab FX, my own audio plugin company.</p>
             </div>
             <div class="hero-actions">
                 <a href="#work" class="btn">See case studies</a>
@@ -368,15 +397,15 @@
             <span class="label">Worked with</span>
             <ul><li>Intel</li><li>McAfee</li><li>Faraday</li></ul>
         </div>
-        <div class="tile stat s2"><span>Commercial plugins, built solo</span><b>21</b></div>
-        <div class="tile stat s2"><span>Paying customers worldwide</span><b>500+</b></div>
-        <div class="tile stat s2 wide-sm"><span>Developers on my design system</span><b>50+</b></div>
+        <div class="tile stat s2"><span>Years designing security web apps</span><b>12</b></div>
+        <div class="tile stat s2"><span>Developers on my design system</span><b>50+</b></div>
+        <div class="tile stat s2 wide-sm"><span>Plugins shipped in my side project</span><b>21</b></div>
     </header>
 
     <!-- CASE STUDIES -->
     <div class="section-head" id="work">
         <h2>Case studies</h2>
-        <span class="label">3 projects</span>
+        <span class="label">Enterprise security</span>
     </div>
 
     <section class="grid" aria-label="Faraday case study">
@@ -389,7 +418,7 @@
         </article>
         <div class="tile shot s3"><button data-full="screens/faraday-dashboard-1.png" aria-label="Enlarge Faraday dashboard"><img src="screens/faraday-dashboard-1.png" alt="Faraday vulnerability dashboard" loading="lazy"></button></div>
         <div class="tile stat dark s1"><span>Monthly releases</span><b>5 yrs</b></div>
-        <div class="tile stat s1"><span>UX team I built</span><b>1→4</b></div>
+        <div class="tile stat s1"><span>UX team I built and led</span><b>4</b></div>
         <div class="tile shot s1"><button data-full="screens/faraday-dashboard-7.png" aria-label="Enlarge vulnerability detail"><img src="screens/faraday-dashboard-7.png" alt="Faraday vulnerability detail" loading="lazy"></button></div>
     </section>
 
@@ -404,74 +433,42 @@
         <div class="tile stat s1 logos"><span class="label">Adopted by</span><b style="font-family:var(--display);font-size:22px;letter-spacing:-0.02em;line-height:1.1">All Intel Security products</b></div>
     </section>
 
-    <!-- GROOVELAB -->
-    <section class="grid" id="groovelab" aria-label="GrooveLab FX case study">
-        <article class="tile dark feature s6">
-            <div>
-                <p class="label">GrooveLab FX · 2017-Present · New in 2026</p>
-                <h2 style="margin-top:10px">Running a product company of one</h2>
-                <p class="muted">Audio plugins are one of the hardest consumer software categories: real-time C++ DSP, custom GUIs, cross-platform builds, and famously picky customers. I built the whole company solo: 21 commercial VST/AU plugins, every interface designed and coded by me, plus the e-commerce platform, licensing, marketing, and community around them.</p>
-                <p class="muted">Pictured: <strong style="color:var(--dark-fg)">Prometheus</strong>, an analog guitar synth released this year. VCO, sub octave and ring modulator that track every note you play.</p>
-                <div class="links">
-                    <a href="https://groovelab-fx.com" target="_blank" rel="noopener">groovelab-fx.com ↗</a>
-                    <a href="https://groovelab-fx.com/prometheus" target="_blank" rel="noopener">Prometheus ↗</a>
-                </div>
+    <!-- CRAFT -->
+    <div class="section-head" id="craft">
+        <h2>Front-end craft</h2>
+        <span class="label">HTML · CSS · JS · Web standards</span>
+    </div>
+    <section class="grid" aria-label="Front-end craft">
+        <div class="tile craft core s3 r2">
+            <p class="label">What I know best</p>
+            <h3>HTML, CSS, and JavaScript, built to the standard</h3>
+            <p class="muted">I have written front-end code for my whole career, and I design with it in mind. Interfaces I hand off are interfaces I know how to build, and often build myself.</p>
+            <ul class="checks">
+                <li><b>Web standards.</b> Semantic, valid HTML and accessible markup (WCAG).</li>
+                <li><b>Cross-browser compatibility.</b> Tested across browsers and devices, with progressive enhancement so the core works everywhere.</li>
+                <li><b>Modern CSS.</b> Layout systems, theming, design tokens, and responsive behavior.</li>
+                <li><b>Vanilla JavaScript.</b> Interaction, state, and performance without leaning on a framework.</li>
+            </ul>
+            <p class="muted small">This site is hand-coded HTML, CSS, and JavaScript with no framework or build step.</p>
+        </div>
+        <div class="tile dark shader-tile s3">
+            <canvas id="shader" aria-hidden="true"></canvas>
+            <div class="shader-copy">
+                <p class="label">Live WebGL shader · written for this page</p>
+                <p class="muted">A GLSL fragment shader running in your browser right now. Shaders, canvas, and JS visual effects are how I add motion and atmosphere.</p>
             </div>
-            <button class="shot" style="all:unset;cursor:zoom-in" data-full="screens/products/full/prometheus.png" aria-label="Enlarge Prometheus"><img src="screens/products/full/prometheus.png" alt="Prometheus analog guitar synthesizer plugin interface"></button>
-        </article>
-
-        <div class="tile stat s2"><span>Customers</span><b>500+</b></div>
-        <div class="tile stat s2"><span>Plugins shipped</span><b>21</b></div>
-        <div class="tile stat s2 wide-sm"><span>Full-time focus since</span><b>2026</b></div>
-
-        <div class="tile dark pipeline s3">
-            <p class="label">AI-augmented pipeline I designed</p>
-            <ol>
-                <li><span>Claude Code orchestrates agents that build and test each plugin against strict specs and safeguards I write.</span></li>
-                <li><span>Codex runs adversarial code reviews on every change.</span></li>
-                <li><span>Claude drives Figma and Blender through MCP for UI design and 3D product art.</span></li>
-                <li><span>ComfyUI pipelines generate image, video, and music for marketing.</span></li>
-                <li><span>Every release lands on groovelab-fx.com: I design, build, and maintain the site, and each launch ships its own product page through the same pipeline.</span></li>
-            </ol>
         </div>
-        <div class="tile case-text s3" style="padding:28px">
-            <p class="label">What I own</p>
-            <p>C++ DSP with SPICE-based circuit emulation, GUI design and implementation, cross-platform builds, the groovelab-fx.com website and its Node.js and PostgreSQL store, payments, license keys, marketing, and support.</p>
-            <div class="tags"><span class="tag">C++</span><span class="tag">iPlug2</span><span class="tag">DSP</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">Heroku</span><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">MCP</span><span class="tag">ComfyUI</span></div>
+        <div class="tile craft s3">
+            <h4>Motion and web animation</h4>
+            <p class="muted">UI transitions, scroll and micro-interactions, and full videos produced with web animation instead of a video editor.</p>
         </div>
-
-        <div class="tile s6 plugins" aria-label="Current lineup">
-            <div class="tile-head"><h4>Current lineup</h4><span class="label">Every UI designed and coded by me</span></div>
-            <a class="plugin" href="https://groovelab-fx.com/vibe" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/vibe.png" alt="VIBE plugin" loading="lazy"></div><div><b>VIBE</b><span>Ambient reverb, delay, micro-looper</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/imperial-echo" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/imperial-echo.png" alt="Imperial Echo plugin" loading="lazy"></div><div><b>Imperial Echo</b><span>Analog delay, pitch shifter</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/pot25" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/pot25.png" alt="POT2.5 plugin" loading="lazy"></div><div><b>POT2.5</b><span>Polyphonic octave transposer</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/mt-iii" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/mt-iii.png" alt="MT-III plugin" loading="lazy"></div><div><b>MT-III</b><span>Envelope filter</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/dt-100" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/dt-100.png" alt="DT-100 plugin" loading="lazy"></div><div><b>DT-100</b><span>Realtime pitch shifter</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/axonic-x6" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/axonic-x6.png" alt="Axonic X6 plugin" loading="lazy"></div><div><b>Axonic X6</b><span>Virtual pedalboard multi-FX</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/axonic2" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/axonic2.png" alt="Axonic 2 plugin" loading="lazy"></div><div><b>Axonic 2</b><span>Analog circuit emulation</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/carrot2" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/carrot2.png" alt="Carrot II plugin" loading="lazy"></div><div><b>Carrot II</b><span>Guitar tone suite</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/vbc" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/vbc.png" alt="VBC plugin" loading="lazy"></div><div><b>VBC</b><span>Virtual breath controller</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/prometheus" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/prometheus.png" alt="Prometheus plugin" loading="lazy"></div><div><b>Prometheus</b><span>Analog guitar synthesizer</span></div></a>
+        <div class="tile craft s3">
+            <h4>Dense security web apps</h4>
+            <p class="muted">Dashboards, data tables, and investigation workflows for expert users at Intel, McAfee, and Faraday.</p>
         </div>
-
-        <div class="tile s6 archive" aria-label="Archive">
-            <div class="tile-head"><h4>Archive</h4><span class="label">Earlier, free and retired plugins</span></div>
-            <a href="https://groovelab-fx.com/rupture" target="_blank" rel="noopener" title="Rupture"><div class="stage"><img src="screens/products/full/rupture.png" alt="Rupture" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/axonic" target="_blank" rel="noopener" title="Axonic"><div class="stage"><img src="screens/products/full/axonic.png" alt="Axonic" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/carrot" target="_blank" rel="noopener" title="Carrot"><div class="stage"><img src="screens/products/full/carrot.png" alt="Carrot" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/51gl" target="_blank" rel="noopener" title="51GL"><div class="stage"><img src="screens/products/full/51gl.jpg" alt="51GL" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/vyp3r" target="_blank" rel="noopener" title="Vyp3r"><div class="stage"><img src="screens/products/full/vyp3r.png" alt="Vyp3r" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/cazador" target="_blank" rel="noopener" title="Cazador"><div class="stage"><img src="screens/products/full/cazador.jpg" alt="Cazador" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/satanic" target="_blank" rel="noopener" title="Satanic"><div class="stage"><img src="screens/products/full/satanic.jpg" alt="Satanic" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/v1v0" target="_blank" rel="noopener" title="V1V0"><div class="stage"><img src="screens/products/full/v1v0.jpg" alt="V1V0" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/whacky" target="_blank" rel="noopener" title="Whacky"><div class="stage"><img src="screens/products/full/whacky.jpg" alt="Whacky" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/h4lt" target="_blank" rel="noopener" title="H4LT"><div class="stage"><img src="screens/products/full/h4lt.jpg" alt="H4LT" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/diver" target="_blank" rel="noopener" title="Diver"><div class="stage"><img src="screens/products/full/diver.jpg" alt="Diver" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/v-drive" target="_blank" rel="noopener" title="V-Drive"><div class="stage"><img src="screens/products/full/v-drive.png" alt="V-Drive" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/big-bastard" target="_blank" rel="noopener" title="Big Bastard"><div class="stage"><img src="screens/products/full/big-bastard.png" alt="Big Bastard" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/black-haze" target="_blank" rel="noopener" title="Black Haze"><div class="stage"><img src="screens/products/full/black-haze.jpg" alt="Black Haze" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/groovycab" target="_blank" rel="noopener" title="GroovyCab"><div class="stage"><img src="screens/products/full/groovycab.jpg" alt="GroovyCab" loading="lazy"></div></a>
-            <a href="https://groovelab-fx.com/ir-x" target="_blank" rel="noopener" title="IR-X"><div class="stage"><img src="screens/products/full/ir-x.jpg" alt="IR-X" loading="lazy"></div></a>
+        <div class="tile craft s3">
+            <h4>Design systems in code</h4>
+            <p class="muted">Components that ship as code, like Intel's Living Styleguide delivered as an npm module and plugged into every team's build.</p>
         </div>
     </section>
 
@@ -505,6 +502,81 @@
     </section>
     <div class="more"><button id="showMoreBtn" aria-controls="gallery" aria-expanded="false">Show more work</button></div>
 
+    <!-- GROOVELAB -->
+    <div class="section-head" id="groovelab">
+        <h2>GrooveLab FX</h2>
+        <span class="label">Ongoing project · Since 2017</span>
+    </div>
+    <section class="grid" aria-label="GrooveLab FX">
+        <article class="tile dark feature s6">
+            <div>
+                <p class="label">My ongoing project · Latest release: Prometheus</p>
+                <h2 style="margin-top:10px">An audio plugin company I built and keep shipping</h2>
+                <p class="muted">GrooveLab FX started in 2017 as a side project and grew into a real product line: 21 commercial VST/AU plugins used by 500+ musicians. I design and code every interface, write the real-time C++ DSP, and build the website, store, and licensing around them. It keeps my product and engineering skills sharp on something with paying users.</p>
+                <p class="muted">Pictured: <strong style="color:var(--dark-fg)">Prometheus</strong>, an analog guitar synth released this year. VCO, sub octave and ring modulator that track every note you play.</p>
+                <div class="links">
+                    <a href="https://groovelab-fx.com" target="_blank" rel="noopener">groovelab-fx.com ↗</a>
+                    <a href="https://groovelab-fx.com/prometheus" target="_blank" rel="noopener">Prometheus ↗</a>
+                </div>
+            </div>
+            <button class="shot" style="all:unset;cursor:zoom-in" data-full="screens/products/full/prometheus.png" aria-label="Enlarge Prometheus"><img src="screens/products/full/prometheus.png" alt="Prometheus analog guitar synthesizer plugin interface"></button>
+        </article>
+
+        <div class="tile stat s2"><span>Customers</span><b>500+</b></div>
+        <div class="tile stat s2"><span>Plugins shipped</span><b>21</b></div>
+        <div class="tile stat s2 wide-sm"><span>Shipping since</span><b>2017</b></div>
+
+        <div class="tile dark pipeline s3">
+            <p class="label">AI-augmented pipeline I designed</p>
+            <ol>
+                <li><span>Claude Code orchestrates agents that build and test each plugin against strict specs and safeguards I write.</span></li>
+                <li><span>Codex runs adversarial code reviews on every change.</span></li>
+                <li><span>Claude drives Figma and Blender through MCP for UI design and 3D product art.</span></li>
+                <li><span>ComfyUI pipelines generate image, video, and music for marketing.</span></li>
+                <li><span>Every release lands on groovelab-fx.com: I design, build, and maintain the site, and each launch ships its own product page through the same pipeline.</span></li>
+            </ol>
+        </div>
+        <div class="tile case-text s3" style="padding:28px">
+            <p class="label">What I own</p>
+            <p>C++ DSP with SPICE-based circuit emulation, GUI design and implementation, cross-platform builds, the groovelab-fx.com website and its Node.js and PostgreSQL store, payments, license keys, marketing, and support.</p>
+            <div class="tags"><span class="tag">C++</span><span class="tag">iPlug2</span><span class="tag">DSP</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">Heroku</span><span class="tag">Claude Code</span><span class="tag">Codex</span><span class="tag">MCP</span><span class="tag">ComfyUI</span></div>
+        </div>
+
+        <div class="tile s6 plugins" aria-label="Current lineup">
+            <div class="tile-head"><h4>Current lineup</h4><span class="label">Every UI designed and coded by me</span></div>
+            <a class="plugin" href="https://groovelab-fx.com/vibe" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/vibe.png" alt="VIBE plugin" loading="lazy"></div><div><b>VIBE</b><span>Ambient reverb, delay, micro-looper</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/imperial-echo" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/imperial-echo.png" alt="Imperial Echo plugin" loading="lazy"></div><div><b>Imperial Echo</b><span>Analog delay, pitch shifter</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/pot25" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/pot25.png" alt="POT2.5 plugin" loading="lazy"></div><div><b>POT2.5</b><span>Polyphonic octave transposer</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/mt-iii" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/mt-iii.png" alt="MT-III plugin" loading="lazy"></div><div><b>MT-III</b><span>Envelope filter</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/dt-100" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/dt-100.png" alt="DT-100 plugin" loading="lazy"></div><div><b>DT-100</b><span>Realtime pitch shifter</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/axonic-x6" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/axonic-x6.png" alt="Axonic X6 plugin" loading="lazy"></div><div><b>Axonic X6</b><span>Virtual pedalboard multi-FX</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/axonic2" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/axonic2.png" alt="Axonic 2 plugin" loading="lazy"></div><div><b>Axonic 2</b><span>Analog circuit emulation</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/carrot2" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/carrot2.png" alt="Carrot II plugin" loading="lazy"></div><div><b>Carrot II</b><span>Guitar tone suite</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/vbc" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/vbc.png" alt="VBC plugin" loading="lazy"></div><div><b>VBC</b><span>Virtual breath controller</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/prometheus" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/prometheus.png" alt="Prometheus plugin" loading="lazy"></div><div><b>Prometheus</b><span>Analog guitar synthesizer</span></div></a>
+        </div>
+
+        <div class="tile s6 archive collapsed" id="archiveGrid" aria-label="Archive">
+            <div class="tile-head"><h4>Archive</h4><button class="archive-toggle" id="archiveToggle" aria-expanded="false" aria-controls="archiveGrid">Show 16 earlier plugins</button></div>
+            <a href="https://groovelab-fx.com/rupture" target="_blank" rel="noopener" title="Rupture"><div class="stage"><img src="screens/products/full/rupture.png" alt="Rupture" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/axonic" target="_blank" rel="noopener" title="Axonic"><div class="stage"><img src="screens/products/full/axonic.png" alt="Axonic" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/carrot" target="_blank" rel="noopener" title="Carrot"><div class="stage"><img src="screens/products/full/carrot.png" alt="Carrot" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/51gl" target="_blank" rel="noopener" title="51GL"><div class="stage"><img src="screens/products/full/51gl.jpg" alt="51GL" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/vyp3r" target="_blank" rel="noopener" title="Vyp3r"><div class="stage"><img src="screens/products/full/vyp3r.png" alt="Vyp3r" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/cazador" target="_blank" rel="noopener" title="Cazador"><div class="stage"><img src="screens/products/full/cazador.jpg" alt="Cazador" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/satanic" target="_blank" rel="noopener" title="Satanic"><div class="stage"><img src="screens/products/full/satanic.jpg" alt="Satanic" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/v1v0" target="_blank" rel="noopener" title="V1V0"><div class="stage"><img src="screens/products/full/v1v0.jpg" alt="V1V0" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/whacky" target="_blank" rel="noopener" title="Whacky"><div class="stage"><img src="screens/products/full/whacky.jpg" alt="Whacky" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/h4lt" target="_blank" rel="noopener" title="H4LT"><div class="stage"><img src="screens/products/full/h4lt.jpg" alt="H4LT" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/diver" target="_blank" rel="noopener" title="Diver"><div class="stage"><img src="screens/products/full/diver.jpg" alt="Diver" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/v-drive" target="_blank" rel="noopener" title="V-Drive"><div class="stage"><img src="screens/products/full/v-drive.png" alt="V-Drive" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/big-bastard" target="_blank" rel="noopener" title="Big Bastard"><div class="stage"><img src="screens/products/full/big-bastard.png" alt="Big Bastard" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/black-haze" target="_blank" rel="noopener" title="Black Haze"><div class="stage"><img src="screens/products/full/black-haze.jpg" alt="Black Haze" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/groovycab" target="_blank" rel="noopener" title="GroovyCab"><div class="stage"><img src="screens/products/full/groovycab.jpg" alt="GroovyCab" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/ir-x" target="_blank" rel="noopener" title="IR-X"><div class="stage"><img src="screens/products/full/ir-x.jpg" alt="IR-X" loading="lazy"></div></a>
+        </div>
+    </section>
+
     <!-- EXPERIENCE -->
     <div class="section-head" id="experience">
         <h2>Experience</h2>
@@ -512,7 +584,7 @@
     </div>
     <section class="grid">
         <div class="tile s6 jobs">
-            <div class="job"><div class="when">2017 - Present<br>Full-time since 2026</div><div><h4>Founder &amp; Solo Developer</h4><div class="co">GrooveLab FX</div><p>Founded and run an indie audio software company with 21 commercial VST/AU plugins. I own the entire product lifecycle: C++ DSP, GUI design and implementation, cross-platform builds, the groovelab-fx.com website and e-commerce backend (Node.js, PostgreSQL), payments, and support.</p><span class="hl">21 shipped products</span></div></div>
+            <div class="job"><div class="when">2017 - Present<br>Ongoing project</div><div><h4>Founder &amp; Solo Developer</h4><div class="co">GrooveLab FX</div><p>Founded and run an indie audio software company with 21 commercial VST/AU plugins. I own the entire product lifecycle: C++ DSP, GUI design and implementation, cross-platform builds, the groovelab-fx.com website and e-commerce backend (Node.js, PostgreSQL), payments, and support.</p><span class="hl">21 shipped products</span></div></div>
             <div class="job"><div class="when">2021 - 2026<br>Remote</div><div><h4>Lead UX Designer</h4><div class="co">Faraday Security</div><p>Led a UX team of 4 for a vulnerability management platform, owning the design-to-development pipeline: user stories, epics, GitLab issues, Mermaid flows, and Sketch designs handed off via Zeplin. Modernized a legacy product to new standards.</p><span class="hl">End-to-end UX ownership</span></div></div>
             <div class="job"><div class="when">2015 - 2021<br>Córdoba (ASDC)</div><div><h4>Lead UX Designer</h4><div class="co">Intel Corporation (McAfee)</div><p>On-site at Intel's Argentina Site Development Center. Created the Enterprise Living Styleguide adopted across all Intel Security products, and a reusable component library used by 50+ developers.</p><span class="hl">50+ developers</span></div></div>
             <div class="job"><div class="when">2014 - 2015<br>Córdoba (ASDC)</div><div><h4>UI/UX Developer</h4><div class="co">Intel Corporation (McAfee)</div><p>Built the TrueKey password manager UI across Windows, Android, iOS, and web. Pioneered a single-source view layer for consistent cross-platform UX.</p><span class="hl">4 platforms, 1 codebase</span></div></div>
@@ -529,7 +601,7 @@
     <section class="grid">
         <div class="tile dark skill s2"><h4>AI-augmented workflow</h4><div class="tags"><span class="tag">Claude Code (agent orchestration)</span><span class="tag">Codex (adversarial review)</span><span class="tag">MCP: Figma &amp; Blender</span><span class="tag">ComfyUI</span></div></div>
         <div class="tile skill s2"><h4>Design &amp; prototyping</h4><div class="tags"><span class="tag">Figma</span><span class="tag">Sketch</span><span class="tag">Design systems &amp; tokens</span><span class="tag">User research</span><span class="tag">Prototyping in code</span><span class="tag">Adobe CS</span></div></div>
-        <div class="tile skill s2 wide-sm"><h4>Front-end</h4><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">React</span><span class="tag">Responsive</span><span class="tag">WCAG</span></div></div>
+        <div class="tile skill s2 wide-sm"><h4>Front-end</h4><div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Web standards</span><span class="tag">Cross-browser compatibility</span><span class="tag">Progressive enhancement</span><span class="tag">React</span><span class="tag">WebGL / GLSL shaders</span><span class="tag">Web animation</span><span class="tag">Video with web animation</span><span class="tag">WCAG</span></div></div>
         <div class="tile skill s2"><h4>Engineering</h4><div class="tags"><span class="tag">C++</span><span class="tag">DSP</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">Heroku</span></div></div>
         <div class="tile skill s2"><h4>Process</h4><div class="tags"><span class="tag">Git / GitLab</span><span class="tag">Agile / SCRUM</span><span class="tag">CI/CD</span></div></div>
         <div class="tile skill s2 wide-sm"><h4>Languages</h4><div class="tags"><span class="tag">Spanish (native)</span><span class="tag">English (professional)</span></div></div>
@@ -564,7 +636,7 @@
     </section>
 
     <footer>
-        <p>© 2026 Mario Rebuffi · Córdoba, Argentina</p>
+        <p>© 2026 Mario Rebuffi · Córdoba, Argentina · Designed and hand-coded by me</p>
         <div><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div>
     </footer>
 </div>
@@ -631,6 +703,73 @@
         syncToggle();
     });
     syncToggle();
+
+    // Archive toggle
+    const archiveToggle = document.getElementById('archiveToggle');
+    const archiveGrid = document.getElementById('archiveGrid');
+    archiveToggle.addEventListener('click', () => {
+        const open = !archiveGrid.classList.toggle('collapsed');
+        archiveToggle.setAttribute('aria-expanded', open);
+        archiveToggle.textContent = open ? 'Hide earlier plugins' : 'Show 16 earlier plugins';
+    });
+
+    // Live shader: flowing light bands in the accent palette; pauses off-screen, renders one still frame with reduced motion
+    (function () {
+        const canvas = document.getElementById('shader');
+        const gl = canvas && canvas.getContext('webgl', { antialias: false });
+        if (!gl) return;
+        const vs = 'attribute vec2 p;void main(){gl_Position=vec4(p,0.,1.);}';
+        const fs = [
+            'precision mediump float;uniform vec2 r;uniform float t;',
+            'float h(vec2 p){return fract(sin(dot(p,vec2(127.1,311.7)))*43758.5453);}',
+            'float n(vec2 p){vec2 i=floor(p),f=fract(p);f=f*f*(3.-2.*f);',
+            'return mix(mix(h(i),h(i+vec2(1,0)),f.x),mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x),f.y);}',
+            'float fbm(vec2 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*n(p);p=p*2.03+vec2(1.7,9.2);a*=.5;}return v;}',
+            'void main(){vec2 uv=gl_FragCoord.xy/r;vec2 p=uv*vec2(r.x/r.y,1.)*2.2;',
+            'float q=fbm(p+vec2(0.,t*.06));float w=fbm(p+q*1.8+vec2(t*.05,-t*.03));',
+            'float band=smoothstep(.15,.0,abs(sin(w*7.+t*.25))*.5-.08);',
+            'vec3 col=mix(vec3(.05,.06,.08),vec3(.13,.11,.32),w);',
+            'col+=band*mix(vec3(.36,.29,1.),vec3(.94,.54,.29),uv.x)*.55;',
+            'col+=pow(w,3.)*vec3(.35,.3,.9)*.6;',
+            'col*=1.-.5*pow(length(uv-.5),2.);',
+            'gl_FragColor=vec4(col,1.);}'
+        ].join('\n');
+        function compile(type, src) { const o = gl.createShader(type); gl.shaderSource(o, src); gl.compileShader(o); return o; }
+        const prog = gl.createProgram();
+        gl.attachShader(prog, compile(gl.VERTEX_SHADER, vs));
+        gl.attachShader(prog, compile(gl.FRAGMENT_SHADER, fs));
+        gl.linkProgram(prog);
+        if (!gl.getProgramParameter(prog, gl.LINK_STATUS)) return;
+        gl.useProgram(prog);
+        gl.bindBuffer(gl.ARRAY_BUFFER, gl.createBuffer());
+        gl.bufferData(gl.ARRAY_BUFFER, new Float32Array([-1, -1, 3, -1, -1, 3]), gl.STATIC_DRAW);
+        const loc = gl.getAttribLocation(prog, 'p');
+        gl.enableVertexAttribArray(loc);
+        gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0);
+        const uR = gl.getUniformLocation(prog, 'r'), uT = gl.getUniformLocation(prog, 't');
+        const still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        let visible = false, raf = 0;
+        function size() {
+            const d = Math.min(window.devicePixelRatio || 1, 1.5);
+            canvas.width = Math.max(1, Math.round(canvas.clientWidth * d));
+            canvas.height = Math.max(1, Math.round(canvas.clientHeight * d));
+            gl.viewport(0, 0, canvas.width, canvas.height);
+        }
+        function frame(sec) {
+            gl.uniform2f(uR, canvas.width, canvas.height);
+            gl.uniform1f(uT, sec);
+            gl.drawArrays(gl.TRIANGLES, 0, 3);
+        }
+        function loop(ms) { frame(12 + ms / 1000); if (visible) raf = requestAnimationFrame(loop); }
+        size(); frame(12);
+        window.addEventListener('resize', () => { size(); frame(12); });
+        if (still) return;
+        new IntersectionObserver(([e]) => {
+            visible = e.isIntersecting;
+            cancelAnimationFrame(raf);
+            if (visible) raf = requestAnimationFrame(loop);
+        }).observe(canvas);
+    })();
 
     // Gallery show-more
     const showMoreBtn = document.getElementById('showMoreBtn');
