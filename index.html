@@ -34,6 +34,8 @@
             --dark-fg: #ffffff;
             --dark-muted: #a3a9b4;
             --ok: #22b35e;
+            --stage: #16191f;
+            --stage-hi: #2c313b;
             --display: 'Bricolage Grotesque', 'Inter', system-ui, sans-serif;
             --sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
             --r: 22px;
@@ -50,6 +52,8 @@
             --line: #272b33;
             --accent: #8f84ff;
             --dark: #22262e;
+            --stage: #0b0d10;
+            --stage-hi: #232833;
             color-scheme: dark;
         }
         .theme-toggle {
@@ -198,20 +202,28 @@
         .pipeline li { display: grid; grid-template-columns: 22px 1fr; gap: 8px; }
         .pipeline li::before { counter-increment: step; content: counter(step); font-family: var(--display); font-weight: 700; color: var(--dark-muted); }
         .pipeline ol { counter-reset: step; }
-        .plugins { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; padding: 14px; }
-        .plugin {
-            display: flex; flex-direction: column; gap: 8px; text-decoration: none;
-            border-radius: 14px; padding: 10px; background: var(--tile-2);
-            transition: transform 0.2s ease;
-        }
-        .plugin:hover { transform: translateY(-3px); }
-        .plugin .art { aspect-ratio: 4 / 5; display: grid; place-items: center; }
-        .plugin .art img { max-height: 100%; width: auto; object-fit: contain; }
+        .plugins { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; padding: 14px; }
+        .plugin { display: flex; flex-direction: column; gap: 10px; text-decoration: none; min-width: 0; }
         .plugin b { font-family: var(--display); font-size: 15px; font-weight: 650; display: block; line-height: 1.2; }
         .plugin span { font-size: 12.5px; color: var(--muted); }
         .archive { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 8px; padding: 14px; }
-        .archive a { display: grid; place-items: center; aspect-ratio: 1; background: var(--tile-2); border-radius: 12px; padding: 8px; }
-        .archive img { max-height: 100%; width: auto; object-fit: contain; }
+        /* Stage: identical dark spotlight box for every plugin; JS sets --w/--h so each image covers the same visual area */
+        .stage {
+            position: relative; display: grid; place-items: center; overflow: hidden;
+            aspect-ratio: 4 / 5; border-radius: 14px;
+            background: radial-gradient(120% 70% at 50% 30%, var(--stage-hi), var(--stage) 70%);
+        }
+        .archive .stage { aspect-ratio: 1; border-radius: 12px; }
+        .stage::after {
+            content: ""; position: absolute; left: 18%; right: 18%; bottom: 6%; height: 7%; border-radius: 50%;
+            background: radial-gradient(closest-side, rgba(0, 0, 0, 0.55), transparent);
+        }
+        .stage img {
+            position: relative; z-index: 1; width: var(--w, 76%); height: var(--h, auto); max-width: none;
+            object-fit: contain; filter: drop-shadow(0 10px 16px rgba(0, 0, 0, 0.45));
+            transition: transform 0.3s ease;
+        }
+        .plugin:hover .stage img, .archive a:hover .stage img { transform: translateY(-4px) scale(1.03); }
         .tile-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 10px 10px 4px; grid-column: 1 / -1; }
 
         /* Gallery */
@@ -429,36 +441,36 @@
 
         <div class="tile s6 plugins" aria-label="Current lineup">
             <div class="tile-head"><h4>Current lineup</h4><span class="label">Every UI designed and coded by me</span></div>
-            <a class="plugin" href="https://groovelab-fx.com/vibe" target="_blank" rel="noopener"><div class="art"><img src="screens/products/full/vibe.png" alt="VIBE plugin" loading="lazy"></div><div><b>VIBE</b><span>Ambient reverb, delay, micro-looper</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/imperial-echo" target="_blank" rel="noopener"><div class="art"><img src="screens/products/full/imperial-echo.png" alt="Imperial Echo plugin" loading="lazy"></div><div><b>Imperial Echo</b><span>Analog delay, pitch shifter</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/pot25" target="_blank" rel="noopener"><div class="art"><img src="screens/products/full/pot25.png" alt="POT2.5 plugin" loading="lazy"></div><div><b>POT2.5</b><span>Polyphonic octave transposer</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/mt-iii" target="_blank" rel="noopener"><div class="art"><img src="screens/products/full/mt-iii.png" alt="MT-III plugin" loading="lazy"></div><div><b>MT-III</b><span>Envelope filter</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/dt-100" target="_blank" rel="noopener"><div class="art"><img src="screens/products/full/dt-100.png" alt="DT-100 plugin" loading="lazy"></div><div><b>DT-100</b><span>Realtime pitch shifter</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/axonic-x6" target="_blank" rel="noopener"><div class="art"><img src="screens/products/full/axonic-x6.png" alt="Axonic X6 plugin" loading="lazy"></div><div><b>Axonic X6</b><span>Virtual pedalboard multi-FX</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/axonic2" target="_blank" rel="noopener"><div class="art"><img src="screens/products/full/axonic2.png" alt="Axonic 2 plugin" loading="lazy"></div><div><b>Axonic 2</b><span>Analog circuit emulation</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/carrot2" target="_blank" rel="noopener"><div class="art"><img src="screens/products/full/carrot2.png" alt="Carrot II plugin" loading="lazy"></div><div><b>Carrot II</b><span>Guitar tone suite</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/vbc" target="_blank" rel="noopener"><div class="art"><img src="screens/products/full/vbc.png" alt="VBC plugin" loading="lazy"></div><div><b>VBC</b><span>Virtual breath controller</span></div></a>
-            <a class="plugin" href="https://groovelab-fx.com/prometheus" target="_blank" rel="noopener"><div class="art"><img src="screens/products/full/prometheus.png" alt="Prometheus plugin" loading="lazy"></div><div><b>Prometheus</b><span>Analog guitar synthesizer</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/vibe" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/vibe.png" alt="VIBE plugin" loading="lazy"></div><div><b>VIBE</b><span>Ambient reverb, delay, micro-looper</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/imperial-echo" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/imperial-echo.png" alt="Imperial Echo plugin" loading="lazy"></div><div><b>Imperial Echo</b><span>Analog delay, pitch shifter</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/pot25" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/pot25.png" alt="POT2.5 plugin" loading="lazy"></div><div><b>POT2.5</b><span>Polyphonic octave transposer</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/mt-iii" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/mt-iii.png" alt="MT-III plugin" loading="lazy"></div><div><b>MT-III</b><span>Envelope filter</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/dt-100" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/dt-100.png" alt="DT-100 plugin" loading="lazy"></div><div><b>DT-100</b><span>Realtime pitch shifter</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/axonic-x6" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/axonic-x6.png" alt="Axonic X6 plugin" loading="lazy"></div><div><b>Axonic X6</b><span>Virtual pedalboard multi-FX</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/axonic2" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/axonic2.png" alt="Axonic 2 plugin" loading="lazy"></div><div><b>Axonic 2</b><span>Analog circuit emulation</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/carrot2" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/carrot2.png" alt="Carrot II plugin" loading="lazy"></div><div><b>Carrot II</b><span>Guitar tone suite</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/vbc" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/vbc.png" alt="VBC plugin" loading="lazy"></div><div><b>VBC</b><span>Virtual breath controller</span></div></a>
+            <a class="plugin" href="https://groovelab-fx.com/prometheus" target="_blank" rel="noopener"><div class="stage"><img src="screens/products/full/prometheus.png" alt="Prometheus plugin" loading="lazy"></div><div><b>Prometheus</b><span>Analog guitar synthesizer</span></div></a>
         </div>
 
         <div class="tile s6 archive" aria-label="Archive">
             <div class="tile-head"><h4>Archive</h4><span class="label">Earlier, free and retired plugins</span></div>
-            <a href="https://groovelab-fx.com/rupture" target="_blank" rel="noopener" title="Rupture"><img src="screens/products/full/rupture.png" alt="Rupture" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/axonic" target="_blank" rel="noopener" title="Axonic"><img src="screens/products/full/axonic.png" alt="Axonic" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/carrot" target="_blank" rel="noopener" title="Carrot"><img src="screens/products/full/carrot.png" alt="Carrot" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/51gl" target="_blank" rel="noopener" title="51GL"><img src="screens/products/full/51gl.jpg" alt="51GL" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/vyp3r" target="_blank" rel="noopener" title="Vyp3r"><img src="screens/products/full/vyp3r.png" alt="Vyp3r" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/cazador" target="_blank" rel="noopener" title="Cazador"><img src="screens/products/full/cazador.jpg" alt="Cazador" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/satanic" target="_blank" rel="noopener" title="Satanic"><img src="screens/products/full/satanic.jpg" alt="Satanic" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/v1v0" target="_blank" rel="noopener" title="V1V0"><img src="screens/products/full/v1v0.jpg" alt="V1V0" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/whacky" target="_blank" rel="noopener" title="Whacky"><img src="screens/products/full/whacky.jpg" alt="Whacky" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/h4lt" target="_blank" rel="noopener" title="H4LT"><img src="screens/products/full/h4lt.jpg" alt="H4LT" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/diver" target="_blank" rel="noopener" title="Diver"><img src="screens/products/full/diver.jpg" alt="Diver" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/v-drive" target="_blank" rel="noopener" title="V-Drive"><img src="screens/products/full/v-drive.png" alt="V-Drive" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/big-bastard" target="_blank" rel="noopener" title="Big Bastard"><img src="screens/products/full/big-bastard.png" alt="Big Bastard" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/black-haze" target="_blank" rel="noopener" title="Black Haze"><img src="screens/products/full/black-haze.jpg" alt="Black Haze" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/groovycab" target="_blank" rel="noopener" title="GroovyCab"><img src="screens/products/full/groovycab.jpg" alt="GroovyCab" loading="lazy"></a>
-            <a href="https://groovelab-fx.com/ir-x" target="_blank" rel="noopener" title="IR-X"><img src="screens/products/full/ir-x.jpg" alt="IR-X" loading="lazy"></a>
+            <a href="https://groovelab-fx.com/rupture" target="_blank" rel="noopener" title="Rupture"><div class="stage"><img src="screens/products/full/rupture.png" alt="Rupture" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/axonic" target="_blank" rel="noopener" title="Axonic"><div class="stage"><img src="screens/products/full/axonic.png" alt="Axonic" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/carrot" target="_blank" rel="noopener" title="Carrot"><div class="stage"><img src="screens/products/full/carrot.png" alt="Carrot" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/51gl" target="_blank" rel="noopener" title="51GL"><div class="stage"><img src="screens/products/full/51gl.jpg" alt="51GL" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/vyp3r" target="_blank" rel="noopener" title="Vyp3r"><div class="stage"><img src="screens/products/full/vyp3r.png" alt="Vyp3r" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/cazador" target="_blank" rel="noopener" title="Cazador"><div class="stage"><img src="screens/products/full/cazador.jpg" alt="Cazador" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/satanic" target="_blank" rel="noopener" title="Satanic"><div class="stage"><img src="screens/products/full/satanic.jpg" alt="Satanic" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/v1v0" target="_blank" rel="noopener" title="V1V0"><div class="stage"><img src="screens/products/full/v1v0.jpg" alt="V1V0" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/whacky" target="_blank" rel="noopener" title="Whacky"><div class="stage"><img src="screens/products/full/whacky.jpg" alt="Whacky" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/h4lt" target="_blank" rel="noopener" title="H4LT"><div class="stage"><img src="screens/products/full/h4lt.jpg" alt="H4LT" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/diver" target="_blank" rel="noopener" title="Diver"><div class="stage"><img src="screens/products/full/diver.jpg" alt="Diver" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/v-drive" target="_blank" rel="noopener" title="V-Drive"><div class="stage"><img src="screens/products/full/v-drive.png" alt="V-Drive" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/big-bastard" target="_blank" rel="noopener" title="Big Bastard"><div class="stage"><img src="screens/products/full/big-bastard.png" alt="Big Bastard" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/black-haze" target="_blank" rel="noopener" title="Black Haze"><div class="stage"><img src="screens/products/full/black-haze.jpg" alt="Black Haze" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/groovycab" target="_blank" rel="noopener" title="GroovyCab"><div class="stage"><img src="screens/products/full/groovycab.jpg" alt="GroovyCab" loading="lazy"></div></a>
+            <a href="https://groovelab-fx.com/ir-x" target="_blank" rel="noopener" title="IR-X"><div class="stage"><img src="screens/products/full/ir-x.jpg" alt="IR-X" loading="lazy"></div></a>
         </div>
     </section>
 
@@ -588,6 +600,21 @@
     });
     lightbox.addEventListener('click', e => { if (e.target !== lightboxImg) closeLightbox(); });
     document.addEventListener('keydown', e => { if (e.key === 'Escape' && lightbox.classList.contains('active')) closeLightbox(); });
+
+    // Equal visual weight: scale each plugin image by its shape so all cover the same area of their stage
+    function weigh(img) {
+        const r = img.naturalWidth / img.naturalHeight;
+        if (!r) return;
+        const square = !!img.closest('.archive');
+        const boxR = square ? 1 : 0.8, k = square ? 0.48 : 0.5, max = 0.88;
+        let w = Math.sqrt(k * r / boxR), h = Math.sqrt(k * boxR / r);
+        const over = Math.max(w / max, h / max, 1);
+        img.style.setProperty('--w', (w / over * 100).toFixed(1) + '%');
+        img.style.setProperty('--h', (h / over * 100).toFixed(1) + '%');
+    }
+    document.querySelectorAll('.stage img').forEach(img => {
+        if (img.complete) weigh(img); else img.addEventListener('load', () => weigh(img));
+    });
 
     // Theme toggle
     const themeToggle = document.getElementById('themeToggle');
